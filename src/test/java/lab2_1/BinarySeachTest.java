@@ -17,6 +17,8 @@ public class BinarySeachTest
 		int[] seq = {1};
 		SearchResult sr = BinarySearch.search(1,seq);
 		assertThat(sr.isFound(), is(true));
+		//Weryfikacja pozycji
+		assertThat(sr.getPosition(), is(1));
 	}
 	
 	//Test - Dlugosc = 1, gdy element nie jest w sekwencji
@@ -26,11 +28,13 @@ public class BinarySeachTest
 		int[] seq = {1};
 		SearchResult sr = BinarySearch.search(2, seq);
 		assertThat(sr.isFound(),is(false));
+		//Weryfikacja pozycji
+		assertThat(sr.getPosition(),is(-1));
 	}
 	
 	//Test - Dlugosc > 1, gdy jest pierwszym elementem w sekwencji
 	@Test
-	public void lenLongerThanOne_foundIndexOne() 
+	public void lenLongerAndEvenThanOne_foundIndexOne() 
 	{
 		int[] seq = {-3,5,6,7};
 		SearchResult sr = BinarySearch.search(-3,seq);
@@ -40,7 +44,7 @@ public class BinarySeachTest
 	
 	//Test - Dlugosc > 1, gdy jest œrodkowym elementem w sekwencji
 	@Test
-	public void lenLongerThanOne_foundIndexMiddle()
+	public void lenLongerAndEvenThanOne_foundIndexMiddle()
 	{
 		int[]seq = {-3,4,5,6,7};
 		SearchResult sr = BinarySearch.search(5, seq);
@@ -50,7 +54,7 @@ public class BinarySeachTest
 	
 	//Test - Dlugosc > 1, gdy jest ostatnim elementem w sekwencji
 	@Test
-	public void lenLongerThanOne_foundIndexLast()
+	public void lenLongerAndEvenThanOne_foundIndexLast()
 	{
 		int[] seq = {-3,5,6,7};
 		SearchResult sr = BinarySearch.search(7, seq);
@@ -60,10 +64,12 @@ public class BinarySeachTest
 	
 	//Test - Dlugosc > 1, gdy elementu nie ma w sekwencji
 	@Test
-	public void lenLongerThanOne_notFound()
+	public void lenLongerAndEvenThanOne_notFound()
 	{
 		int[] seq = {-3,4,5,6,7};
 		SearchResult sr = BinarySearch.search(10, seq);
 		assertThat(sr.isFound(), is(false));
+		assertThat(sr.getPosition(), is(-1));
 	}
+	
 }
