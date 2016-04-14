@@ -72,4 +72,11 @@ public class BinarySeachTest
 		assertThat(sr.getPosition(), is(-1));
 	}
 	
+	//Sprawdzenie wyj¹tków
+	@Test(expected = IllegalArgumentException.class)
+	public void length_ThrowException()
+	{
+		int[] seq = {};
+		BinarySearch.search(1, seq);
+	}
 }
