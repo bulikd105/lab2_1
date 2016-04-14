@@ -11,14 +11,6 @@ public class BinarySearch {
 
 	/**
 	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
 	 * Metoda realizujaca wyszukiwanie binarne
 	 * 
 	 * @param key
