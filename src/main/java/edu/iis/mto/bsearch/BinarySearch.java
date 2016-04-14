@@ -25,6 +25,12 @@ public class BinarySearch {
 		int start = 0;
 		int end = seq.length - 1;
 		int center;
+		
+		//Sprawdzanie czy sekwencja nie jest pusta
+		if(seq.length == 0)
+		{
+			throw new IllegalArgumentException();
+		}
 		SearchResult result = new SearchResult();
 
 		while (start <= end) {
