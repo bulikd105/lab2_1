@@ -10,7 +10,7 @@ import edu.iis.mto.bsearch.SearchResult;
 
 public class BinarySeachTest 
 {
-
+	//Test - Dlugosc = 1, gdy jest elementem w sekwencji
 	@Test
 	public void seqLengthOne_shouldFoundIndex() 
 	{
@@ -19,13 +19,23 @@ public class BinarySeachTest
 		assertThat(sr.isFound(), is(true));
 	}
 	
+	//Test - Dlugosc > 1, gdy jest pierwszym elementem w sekwencji
 	@Test
-	public void seqLengthLongerThanOne_shouldFoundIndexOne() 
+	public void seqLenLongerThanOne_shouldFoundIndexOne() 
 	{
 		int[] seq = {-3,5,6,7};
 		SearchResult sr = BinarySearch.search(-3,seq);
 		assertThat(sr.isFound(), is(true));
 		assertThat(sr.getPosition(),is(1));
 	}
-
+	
+	//Test - Dlugosc > 1, gdy jest œrodkowym elementem w sekwencji
+	@Test
+	public void seqLengthLongerThanOne_shouldFoundAtMiddleIndex()
+	{
+		int[]seq = {-3,4,5,6,7};
+		SearchResult sr = BinarySearch.search(5, seq);
+		assertThat(sr.isFound(), is(true));
+		assertThat(sr.getPosition(), is((seq.length+1)/2));
+	}
 }
